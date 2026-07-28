@@ -47,6 +47,9 @@ window.onload = () => {
 function showLogo(){
 
     logo.style.display="block";
+    logo.classList.add("glitch");
+    logo.setAttribute("data-text","THALES");
+
 
     glitchLogo();
 
@@ -158,6 +161,8 @@ function showFinal(){
 finalScreen.style.display="block";
 
 artist.style.opacity="0";
+    artist.classList.add("glitch");
+    artist.setAttribute("data-text","THALESRCM");
 
 quote.style.opacity="0";
 
@@ -199,12 +204,18 @@ setTimeout(()=>{
 
 document.getElementById("eyeFlash").style.display="flex";
 
-},120);
+},100);
+
+setTimeout(()=>{
+
+document.body.classList.add("tvOff");
+
+},380);
 
 setTimeout(()=>{
 
 window.location.href="home.html";
 
-},520);
+},850);
 
-};
+}
