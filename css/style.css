@@ -834,3 +834,58 @@ animation:enterPulse 3s infinite;
     }
 
 }
+body{
+
+    cursor:crosshair;
+
+}
+::selection{
+
+    background:#7d3cff;
+
+    color:white;
+
+}
+html{
+
+    scroll-behavior:smooth;
+
+}
+@media(max-width:900px){
+
+#logo{
+
+font-size:55px;
+letter-spacing:6px;
+
+}
+
+#artistName{
+
+font-size:45px;
+letter-spacing:4px;
+
+}
+
+#quote{
+
+width:90%;
+font-size:15px;
+line-height:28px;
+
+}
+
+.progressContainer{
+
+width:85%;
+
+}
+
+#enterButton{
+
+padding:15px 40px;
+font-size:18px;
+
+}
+
+}
