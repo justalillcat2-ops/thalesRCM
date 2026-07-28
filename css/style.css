@@ -1,1 +1,394 @@
+/* =========================
+   IMPORTAÇÃO DE FONTE
+========================= */
 
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:#000;
+    font-family:'Share Tech Mono', monospace;
+    color:white;
+}
+
+/* =========================
+   FUNDO
+========================= */
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+/* =========================
+   RUÍDO
+========================= */
+
+#noise{
+    position:fixed;
+    inset:0;
+
+    opacity:.035;
+
+    background-image:
+    repeating-radial-gradient(circle at center,#ffffff08 0 1px,#0000 2px 4px);
+
+    animation:noise .18s infinite;
+    pointer-events:none;
+}
+
+@keyframes noise{
+
+0%{transform:translate(0,0);}
+20%{transform:translate(-2px,2px);}
+40%{transform:translate(3px,-2px);}
+60%{transform:translate(-3px,-1px);}
+80%{transform:translate(2px,3px);}
+100%{transform:translate(0,0);}
+
+}
+
+/* =========================
+   SCANLINES
+========================= */
+
+#crt{
+
+position:fixed;
+inset:0;
+
+pointer-events:none;
+
+background:
+repeating-linear-gradient(
+
+0deg,
+
+rgba(255,255,255,.03) 0px,
+rgba(255,255,255,.03) 1px,
+transparent 2px,
+transparent 4px
+
+);
+
+opacity:.18;
+
+}
+
+/* =========================
+   INTRO
+========================= */
+
+#intro{
+
+text-align:center;
+z-index:5;
+
+}
+
+/* =========================
+   LOGO
+========================= */
+
+#logo{
+
+font-size:90px;
+
+letter-spacing:12px;
+
+display:none;
+
+text-shadow:
+
+0 0 5px white,
+0 0 15px #7d3cff,
+0 0 30px #7d3cff;
+
+}
+
+/* =========================
+   BOOT
+========================= */
+
+#bootScreen{
+
+display:none;
+
+margin-top:20px;
+
+}
+
+#bootText{
+
+font-size:22px;
+
+margin-bottom:20px;
+
+color:#ddd;
+
+}
+
+/* =========================
+   BARRA
+========================= */
+
+.progressContainer{
+
+width:500px;
+
+height:18px;
+
+border:2px solid #7d3cff;
+
+margin:auto;
+
+overflow:hidden;
+
+}
+
+.progressBar{
+
+height:100%;
+
+width:0%;
+
+background:#ffd500;
+
+}
+
+/* =========================
+   PORCENTAGEM
+========================= */
+
+#percent{
+
+margin-top:12px;
+
+font-size:18px;
+
+}
+
+/* =========================
+   TELA FINAL
+========================= */
+
+#finalScreen{
+
+display:none;
+
+}
+
+#artistName{
+
+font-size:80px;
+
+letter-spacing:10px;
+
+text-shadow:
+
+0 0 10px white,
+0 0 25px #7d3cff;
+
+margin-bottom:30px;
+
+}
+
+#quote{
+
+width:70%;
+
+margin:auto;
+
+line-height:35px;
+
+font-size:21px;
+
+color:#cccccc;
+
+margin-bottom:60px;
+
+}
+
+/* =========================
+   BOTÃO
+========================= */
+
+#enterButton{
+
+background:#181818;
+
+color:white;
+
+font-family:inherit;
+
+font-size:22px;
+
+padding:18px 60px;
+
+border:2px solid #7d3cff;
+
+cursor:pointer;
+
+transition:.25s;
+
+box-shadow:
+
+0 0 10px #7d3cff;
+
+}
+
+#enterButton:hover{
+
+background:#7d3cff;
+
+transform:translateY(3px);
+
+box-shadow:
+
+0 0 20px #7d3cff,
+0 0 45px #7d3cff;
+
+}
+
+/* =========================
+   FRASES AO FUNDO
+========================= */
+
+#backgroundWords{
+
+position:fixed;
+
+inset:0;
+
+overflow:hidden;
+
+pointer-events:none;
+
+}
+
+#backgroundWords span{
+
+position:absolute;
+
+color:white;
+
+opacity:.02;
+
+font-size:28px;
+
+animation:floatWords 20s linear infinite;
+
+}
+
+/* posições */
+
+#backgroundWords span:nth-child(1){
+
+left:10%;
+top:12%;
+
+}
+
+#backgroundWords span:nth-child(2){
+
+right:8%;
+top:30%;
+
+}
+
+#backgroundWords span:nth-child(3){
+
+left:18%;
+bottom:18%;
+
+}
+
+#backgroundWords span:nth-child(4){
+
+right:20%;
+bottom:25%;
+
+}
+
+#backgroundWords span:nth-child(5){
+
+left:45%;
+top:18%;
+
+}
+
+#backgroundWords span:nth-child(6){
+
+right:40%;
+bottom:12%;
+
+}
+
+#backgroundWords span:nth-child(7){
+
+left:50%;
+top:72%;
+
+}
+
+@keyframes floatWords{
+
+0%{
+
+transform:translateY(20px);
+
+}
+
+50%{
+
+transform:translateY(-20px);
+
+}
+
+100%{
+
+transform:translateY(20px);
+
+}
+
+}
+
+/* =========================
+   OLHO
+========================= */
+
+#eyeFlash{
+
+position:fixed;
+
+inset:0;
+
+display:none;
+
+justify-content:center;
+align-items:center;
+
+background:black;
+
+z-index:999;
+
+}
+
+#eyeFlash img{
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+}
