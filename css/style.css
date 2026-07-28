@@ -387,6 +387,189 @@ z-index:999;
 #eyeFlash img{
 
 width:100%;
+   /*==========================
+    CRT PISCANDO
+==========================*/
+
+@keyframes crtFlicker{
+
+0%{opacity:.20;}
+5%{opacity:.12;}
+10%{opacity:.18;}
+30%{opacity:.25;}
+50%{opacity:.15;}
+70%{opacity:.21;}
+100%{opacity:.18;}
+
+}
+
+#crt{
+
+animation:crtFlicker .12s infinite;
+
+}
+
+/*==========================
+    GLITCH
+==========================*/
+
+.glitch{
+
+position:relative;
+
+animation:glitch .12s infinite;
+
+}
+
+.glitch::before,
+.glitch::after{
+
+content:attr(data-text);
+
+position:absolute;
+
+left:0;
+top:0;
+
+width:100%;
+
+overflow:hidden;
+
+}
+
+.glitch::before{
+
+left:-3px;
+
+color:red;
+
+clip-path:inset(0 0 45% 0);
+
+opacity:.6;
+
+}
+
+.glitch::after{
+
+left:3px;
+
+color:cyan;
+
+clip-path:inset(55% 0 0 0);
+
+opacity:.6;
+
+}
+
+@keyframes glitch{
+
+0%{
+
+transform:translate(0);
+
+}
+
+20%{
+
+transform:translate(-2px,2px);
+
+}
+
+40%{
+
+transform:translate(2px,-2px);
+
+}
+
+60%{
+
+transform:translate(-2px,0);
+
+}
+
+80%{
+
+transform:translate(2px,2px);
+
+}
+
+100%{
+
+transform:translate(0);
+
+}
+
+}
+
+/*==========================
+    FLASH
+==========================*/
+
+.flash{
+
+animation:flash .18s;
+
+}
+
+@keyframes flash{
+
+0%{
+
+filter:brightness(1);
+
+}
+
+50%{
+
+filter:brightness(3);
+
+}
+
+100%{
+
+filter:brightness(1);
+
+}
+
+}
+
+/*==========================
+    DESLIGAR TV
+==========================*/
+
+@keyframes tvOff{
+
+0%{
+
+transform:scaleY(1);
+
+opacity:1;
+
+}
+
+70%{
+
+transform:scaleY(.02);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:scaleY(0);
+
+opacity:0;
+
+}
+
+}
+
+.tvOff{
+
+animation:tvOff .45s forwards;
+
+}
 height:100%;
 
 object-fit:cover;
