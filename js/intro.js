@@ -198,29 +198,37 @@ enter.style.opacity="1";
 // ENTER
 // =========================
 
-enter.onclick=()=>{
+enter.onclick = () => {
 
-document.body.classList.add("flash");
+    enter.disabled = true;
 
-setTimeout(()=>{
+    document.body.classList.add("flash");
 
-document.getElementById("eyeFlash").style.display="flex";
+    setTimeout(() => {
 
-},100);
+        document.getElementById("eyeFlash").style.display = "flex";
 
-setTimeout(()=>{
+    }, 100);
 
-document.body.classList.add("tvOff");
+    setTimeout(() => {
 
-},380);
+        document.body.classList.add("tvOff");
 
-setTimeout(()=>{
+    }, 380);
 
-window.location.href="home.html";
+    setTimeout(() => {
 
-},850);
+        document.body.classList.add("fadeOut");
 
-}
+    }, 550);
+
+    setTimeout(() => {
+
+        window.location.href = "home.html";
+
+    }, 1000);
+
+};
 // =========================
 // TYPEWRITER
 // =========================
