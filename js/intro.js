@@ -182,6 +182,8 @@ setTimeout(()=>{
 
 quote.style.opacity="1";
 
+typeWriter();
+
 },1800);
 
 setTimeout(()=>{
@@ -217,5 +219,33 @@ setTimeout(()=>{
 window.location.href="home.html";
 
 },850);
+
+}
+// =========================
+// TYPEWRITER
+// =========================
+
+const originalQuote =
+"The beauty of a rotten world lies in the words of someone who wishes to see it become better.";
+
+function typeWriter(){
+
+quote.innerHTML="";
+
+let i=0;
+
+const typing=setInterval(()=>{
+
+quote.innerHTML += originalQuote.charAt(i);
+
+i++;
+
+if(i>=originalQuote.length){
+
+clearInterval(typing);
+
+}
+
+},28);
 
 }
