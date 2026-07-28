@@ -699,3 +699,138 @@ animation:pulseGlow 4s infinite;
 
 }
 }
+/*==========================
+    POWER ON
+==========================*/
+
+body{
+
+animation:powerOn .8s ease;
+
+}
+
+@keyframes powerOn{
+
+0%{
+
+opacity:0;
+transform:scaleY(.01);
+
+}
+
+60%{
+
+opacity:1;
+transform:scaleY(.02);
+
+}
+
+100%{
+
+opacity:1;
+transform:scaleY(1);
+
+}
+
+}
+/*==========================
+      BACKGROUND
+==========================*/
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background:
+
+radial-gradient(circle,#31115f 0%,#000000 70%);
+
+opacity:.18;
+
+animation:breath 10s ease-in-out infinite;
+
+pointer-events:none;
+
+}
+
+@keyframes breath{
+
+0%{
+
+opacity:.10;
+
+}
+
+50%{
+
+opacity:.20;
+
+}
+
+100%{
+
+opacity:.10;
+
+}
+
+}
+@keyframes enterPulse{
+
+0%{
+
+box-shadow:
+0 0 8px #7d3cff;
+
+}
+
+50%{
+
+box-shadow:
+0 0 22px #7d3cff,
+0 0 40px #7d3cff;
+
+}
+
+100%{
+
+box-shadow:
+0 0 8px #7d3cff;
+
+}
+
+}
+
+#enterButton{
+
+animation:enterPulse 3s infinite;
+
+}
+/*==========================
+      FADE FINAL
+==========================*/
+
+.fadeOut{
+
+    animation:fadeOut .6s forwards;
+
+}
+
+@keyframes fadeOut{
+
+    0%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+    }
+
+}
