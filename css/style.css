@@ -1,472 +1,191 @@
-/* =========================
-   IMPORTAÇÃO DE FONTE
-========================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Anton&display=swap');
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
 }
 
 html,body{
-    width:100%;
-    height:100%;
-    overflow:hidden;
-    background:#000;
-    font-family:'Share Tech Mono', monospace;
-    color:white;
-}
 
-/* =========================
-   FUNDO
-========================= */
+width:100%;
+height:100%;
 
-body{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    position:relative;
-}
+overflow:hidden;
 
-/* =========================
-   RUÍDO
-========================= */
-
-#noise{
-    position:fixed;
-    inset:0;
-
-    opacity:.035;
-
-    background-image:
-    repeating-radial-gradient(circle at center,#ffffff08 0 1px,#0000 2px 4px);
-
-    animation:noise .18s infinite;
-    pointer-events:none;
-}
-
-@keyframes noise{
-
-0%{transform:translate(0,0);}
-20%{transform:translate(-2px,2px);}
-40%{transform:translate(3px,-2px);}
-60%{transform:translate(-3px,-1px);}
-80%{transform:translate(2px,3px);}
-100%{transform:translate(0,0);}
+background:#14061d;
 
 }
 
-/* =========================
-   SCANLINES
-========================= */
+/* ==========================
+      FUNDO
+========================== */
 
-#crt{
+#background{
 
 position:fixed;
+
 inset:0;
+
+background:
+
+radial-gradient(circle,#9d6ce6 0%,#6b36bb 45%,#21072d 100%);
+
+}
+
+/* ==========================
+      VINHETA
+========================== */
+
+#vignette{
+
+position:fixed;
+
+inset:0;
+
+background:
+
+radial-gradient(circle,
+
+transparent 25%,
+
+rgba(0,0,0,.25) 55%,
+
+rgba(0,0,0,.80) 100%);
 
 pointer-events:none;
 
+}
+
+/* ==========================
+     SCANLINES
+========================== */
+
+#scanlines{
+
+position:fixed;
+
+inset:0;
+
 background:
+
 repeating-linear-gradient(
 
 0deg,
 
-rgba(255,255,255,.03) 0px,
-rgba(255,255,255,.03) 1px,
-transparent 2px,
-transparent 4px
+rgba(255,255,255,.08) 0px,
+
+rgba(255,255,255,.08) 2px,
+
+transparent 3px,
+
+transparent 5px
 
 );
 
-opacity:.18;
+mix-blend-mode:soft-light;
+
+opacity:.5;
 
 }
 
-/* =========================
-   INTRO
-========================= */
+/* ==========================
+      RUÍDO
+========================== */
+
+#noise{
+
+position:fixed;
+
+inset:0;
+
+background-image:
+
+radial-gradient(circle,#ffffff20 1px,transparent 1px);
+
+background-size:5px 5px;
+
+opacity:.03;
+
+animation:noise .25s infinite;
+
+}
+
+@keyframes noise{
+
+0%{transform:translate(0);}
+20%{transform:translate(-2px,2px);}
+40%{transform:translate(2px,-2px);}
+60%{transform:translate(-1px,1px);}
+80%{transform:translate(2px,2px);}
+100%{transform:translate(0);}
+
+}
+/*==========================
+        INTRO
+==========================*/
 
 #intro{
 
-text-align:center;
-z-index:5;
-
-}
-
-/* =========================
-   LOGO
-========================= */
-
-#logo{
-
-font-size:90px;
-
-letter-spacing:12px;
-
-display:none;
-
-text-shadow:
-
-0 0 5px white,
-0 0 15px #7d3cff,
-0 0 30px #7d3cff;
-
-}
-
-/* =========================
-   BOOT
-========================= */
-
-#bootScreen{
-
-display:none;
-
-margin-top:20px;
-
-}
-
-#bootText{
-
-font-size:22px;
-
-margin-bottom:20px;
-
-color:#ddd;
-
-}
-
-/* =========================
-   BARRA
-========================= */
-
-.progressContainer{
-
-width:500px;
-
-height:18px;
-
-border:2px solid #7d3cff;
-
-margin:auto;
-
-overflow:hidden;
-
-}
-
-.progressBar{
-
-height:100%;
-
-width:0%;
-
-background:#ffd500;
-
-}
-
-/* =========================
-   PORCENTAGEM
-========================= */
-
-#percent{
-
-margin-top:12px;
-
-font-size:18px;
-
-}
-
-/* =========================
-   TELA FINAL
-========================= */
-
-#finalScreen{
-
-display:none;
-
-}
-
-#artistName{
-
-font-size:80px;
-
-letter-spacing:10px;
-
-text-shadow:
-
-0 0 10px white,
-0 0 25px #7d3cff;
-
-margin-bottom:30px;
-
-}
-
-#quote{
-
-width:70%;
-
-margin:auto;
-
-line-height:35px;
-
-font-size:21px;
-
-color:#cccccc;
-
-margin-bottom:60px;
-
-}
-
-/* =========================
-   BOTÃO
-========================= */
-
-#enterButton{
-
-background:#181818;
-
-color:white;
-
-font-family:inherit;
-
-font-size:22px;
-
-padding:18px 60px;
-
-border:2px solid #7d3cff;
-
-cursor:pointer;
-
-transition:.25s;
-
-box-shadow:
-
-0 0 10px #7d3cff;
-
-}
-
-#enterButton:hover{
-
-background:#7d3cff;
-
-transform:translateY(3px);
-
-box-shadow:
-
-0 0 20px #7d3cff,
-0 0 45px #7d3cff;
-
-}
-
-/* =========================
-   FRASES AO FUNDO
-========================= */
-
-#backgroundWords{
-
-position:fixed;
-
-inset:0;
-
-overflow:hidden;
-
-pointer-events:none;
-
-}
-
-#backgroundWords span{
-
 position:absolute;
 
-color:white;
-
-opacity:0;
-
-animation:
-floatWords 20s linear infinite,
-ghost 8s ease-in-out infinite;
-@keyframes ghost{
-
-0%{
-
-opacity:0;
-
-}
-
-20%{
-
-opacity:.02;
-
-}
-
-40%{
-
-opacity:.04;
-
-}
-
-60%{
-
-opacity:.02;
-
-}
-
-100%{
-
-opacity:0;
-
-}
-
-}
-
-font-size:28px;
-
-animation:floatWords 20s linear infinite;
-
-}
-
-/* posições */
-
-#backgroundWords span:nth-child(1){
-
-left:10%;
-top:12%;
-
-}
-
-#backgroundWords span:nth-child(2){
-
-right:8%;
-top:30%;
-
-}
-
-#backgroundWords span:nth-child(3){
-
-left:18%;
-bottom:18%;
-
-}
-
-#backgroundWords span:nth-child(4){
-
-right:20%;
-bottom:25%;
-
-}
-
-#backgroundWords span:nth-child(5){
-
-left:45%;
-top:18%;
-
-}
-
-#backgroundWords span:nth-child(6){
-
-right:40%;
-bottom:12%;
-
-}
-
-#backgroundWords span:nth-child(7){
-
+top:50%;
 left:50%;
-top:72%;
 
-}
-
-@keyframes floatWords{
-
-0%{
-
-transform:translateY(20px);
-
-}
-
-50%{
-
-transform:translateY(-20px);
-
-}
-
-100%{
-
-transform:translateY(20px);
-
-}
-
-}
-
-/* =========================
-   OLHO
-========================= */
-
-#eyeFlash{
-
-position:fixed;
-
-inset:0;
-
-display:none;
-
-justify-content:center;
-align-items:center;
-
-background:black;
-
-z-index:999;
-
-}
-
-#eyeFlash img{
+transform:translate(-50%,-50%);
 
 width:100%;
-   /*==========================
-    CRT PISCANDO
-==========================*/
 
-@keyframes crtFlicker{
+text-align:center;
 
-0%{opacity:.20;}
-5%{opacity:.12;}
-10%{opacity:.18;}
-30%{opacity:.25;}
-50%{opacity:.15;}
-70%{opacity:.21;}
-100%{opacity:.18;}
-
-}
-
-#crt{
-
-animation:crtFlicker .12s infinite;
+z-index:20;
 
 }
 
 /*==========================
-    GLITCH
+        LOGO
 ==========================*/
 
-.glitch{
+#logo{
+
+font-family:"Anton",sans-serif;
+
+font-size:170px;
+
+letter-spacing:8px;
+
+color:white;
+
+display:none;
 
 position:relative;
 
-animation:glitch .12s infinite;
+text-transform:uppercase;
+
+/* sombra branca */
+
+text-shadow:
+
+4px 4px 0px rgba(255,255,255,.3),
+
+8px 8px 0px rgba(0,0,0,.15);
 
 }
 
-.glitch::before,
-.glitch::after{
+/*==========================
+      GLITCH
+==========================*/
+
+#logo::before,
+#logo::after{
 
 content:attr(data-text);
 
 position:absolute;
 
 left:0;
-top:0;
 
 width:100%;
 
@@ -474,417 +193,56 @@ overflow:hidden;
 
 }
 
-.glitch::before{
+#logo::before{
 
-left:-3px;
+color:white;
 
-color:red;
+transform:translate(-6px,-2px);
 
-clip-path:inset(0 0 45% 0);
+clip-path:polygon(0 0,100% 0,100% 35%,0 35%);
 
-opacity:.6;
-
-}
-
-.glitch::after{
-
-left:3px;
-
-color:cyan;
-
-clip-path:inset(55% 0 0 0);
-
-opacity:.6;
+opacity:.8;
 
 }
 
-@keyframes glitch{
+#logo::after{
 
-0%{
+color:white;
 
-transform:translate(0);
+transform:translate(6px,2px);
 
-}
+clip-path:polygon(0 65%,100% 65%,100% 100%,0 100%);
 
-20%{
-
-transform:translate(-2px,2px);
+opacity:.8;
 
 }
-
-40%{
-
-transform:translate(2px,-2px);
-
-}
-
-60%{
-
-transform:translate(-2px,0);
-
-}
-
-80%{
-
-transform:translate(2px,2px);
-
-}
-
-100%{
-
-transform:translate(0);
-
-}
-
-}
-
 /*==========================
-    FLASH
+    FUNDO RESPIRANDO
 ==========================*/
 
-.flash{
+#background{
 
-animation:flash .18s;
+animation:backgroundPulse 10s ease-in-out infinite;
 
 }
 
-@keyframes flash{
+@keyframes backgroundPulse{
 
 0%{
 
-filter:brightness(1);
+filter:brightness(.95);
 
 }
 
 50%{
 
-filter:brightness(3);
+filter:brightness(1.15);
 
 }
 
 100%{
 
-filter:brightness(1);
-
-}
-
-}
-
-/*==========================
-    DESLIGAR TV
-==========================*/
-
-@keyframes tvOff{
-
-0%{
-
-transform:scaleY(1);
-
-opacity:1;
-
-}
-
-70%{
-
-transform:scaleY(.02);
-
-opacity:1;
-
-}
-
-100%{
-
-transform:scaleY(0);
-
-opacity:0;
-
-}
-
-}
-
-.tvOff{
-
-animation:tvOff .45s forwards;
-
-}
-height:100%;
-/*==========================
-      ENTER KEY
-==========================*/
-
-#enterButton{
-
-position:relative;
-
-overflow:hidden;
-
-transition:
-transform .12s,
-box-shadow .2s,
-background .2s;
-
-}
-
-#enterButton:active{
-
-transform:translateY(5px);
-
-box-shadow:none;
-
-}
-
-#enterButton::before{
-
-content:"";
-
-position:absolute;
-
-left:-100%;
-top:0;
-
-width:100%;
-height:100%;
-
-background:
-
-linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,.35),
-transparent
-);
-
-transition:.6s;
-
-}
-
-#enterButton:hover::before{
-
-left:100%;
-
-}
-object-fit:cover;
-@keyframes pulseGlow{
-
-0%{
-
-text-shadow:
-0 0 5px white,
-0 0 15px #7d3cff;
-
-}
-
-50%{
-
-text-shadow:
-0 0 15px white,
-0 0 40px #7d3cff,
-0 0 80px #7d3cff;
-
-}
-
-100%{
-
-text-shadow:
-0 0 5px white,
-0 0 15px #7d3cff;
-
-}
-
-}
-
-#artistName{
-
-animation:pulseGlow 4s infinite;
-
-}
-}
-/*==========================
-    POWER ON
-==========================*/
-
-body{
-
-animation:powerOn .8s ease;
-
-}
-
-@keyframes powerOn{
-
-0%{
-
-opacity:0;
-transform:scaleY(.01);
-
-}
-
-60%{
-
-opacity:1;
-transform:scaleY(.02);
-
-}
-
-100%{
-
-opacity:1;
-transform:scaleY(1);
-
-}
-
-}
-/*==========================
-      BACKGROUND
-==========================*/
-
-body::before{
-
-content:"";
-
-position:fixed;
-
-inset:0;
-
-background:
-
-radial-gradient(circle,#31115f 0%,#000000 70%);
-
-opacity:.18;
-
-animation:breath 10s ease-in-out infinite;
-
-pointer-events:none;
-
-}
-
-@keyframes breath{
-
-0%{
-
-opacity:.10;
-
-}
-
-50%{
-
-opacity:.20;
-
-}
-
-100%{
-
-opacity:.10;
-
-}
-
-}
-@keyframes enterPulse{
-
-0%{
-
-box-shadow:
-0 0 8px #7d3cff;
-
-}
-
-50%{
-
-box-shadow:
-0 0 22px #7d3cff,
-0 0 40px #7d3cff;
-
-}
-
-100%{
-
-box-shadow:
-0 0 8px #7d3cff;
-
-}
-
-}
-
-#enterButton{
-
-animation:enterPulse 3s infinite;
-
-}
-/*==========================
-      FADE FINAL
-==========================*/
-
-.fadeOut{
-
-    animation:fadeOut .6s forwards;
-
-}
-
-@keyframes fadeOut{
-
-    0%{
-
-        opacity:1;
-
-    }
-
-    100%{
-
-        opacity:0;
-
-    }
-
-}
-body{
-
-    cursor:crosshair;
-
-}
-::selection{
-
-    background:#7d3cff;
-
-    color:white;
-
-}
-html{
-
-    scroll-behavior:smooth;
-
-}
-@media(max-width:900px){
-
-#logo{
-
-font-size:55px;
-letter-spacing:6px;
-
-}
-
-#artistName{
-
-font-size:45px;
-letter-spacing:4px;
-
-}
-
-#quote{
-
-width:90%;
-font-size:15px;
-line-height:28px;
-
-}
-
-.progressContainer{
-
-width:85%;
-
-}
-
-#enterButton{
-
-padding:15px 40px;
-font-size:18px;
+filter:brightness(.95);
 
 }
 
