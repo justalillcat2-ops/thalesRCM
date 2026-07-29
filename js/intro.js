@@ -268,3 +268,10 @@ clearInterval(typing);
 },28);
 
 }
+logo.style.display = "block";
+
+logo.classList.add("powerOn");
+
+logo.classList.add("tvGlitch");
+
+logo.setAttribute("data-text","THALES");
