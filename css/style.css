@@ -304,3 +304,310 @@ transform:translate(0);
 animation:logoGlitch 3s infinite;
 
 }
+/*==========================
+        BOOT SCREEN
+==========================*/
+
+#boot{
+
+display:none;
+
+margin-top:40px;
+
+font-family:"Press Start 2P", monospace;
+
+}
+
+#bootText{
+
+font-size:18px;
+
+color:white;
+
+margin-bottom:25px;
+
+text-shadow:2px 2px rgba(0,0,0,.35);
+
+}
+
+#progress{
+
+width:600px;
+
+max-width:80vw;
+
+height:18px;
+
+margin:auto;
+
+background:rgba(255,255,255,.08);
+
+border:3px solid white;
+
+overflow:hidden;
+
+box-shadow:
+
+0 0 15px rgba(255,255,255,.18);
+
+}
+
+#bar{
+
+width:0%;
+
+height:100%;
+
+background:linear-gradient(
+90deg,
+#ffe066,
+#ffd43b,
+#ffec99
+);
+
+transition:width .08s linear;
+
+}
+
+#percent{
+
+margin-top:18px;
+
+font-size:14px;
+
+color:#ffffff;
+
+letter-spacing:2px;
+
+}
+/*==========================
+      MAIN SCREEN
+==========================*/
+
+#mainScreen{
+
+display:none;
+
+opacity:0;
+
+transition:1s;
+
+}
+
+#artist{
+
+font-family:"Anton",sans-serif;
+
+font-size:170px;
+
+letter-spacing:10px;
+
+color:white;
+
+text-shadow:
+
+5px 5px rgba(255,255,255,.35),
+
+10px 10px rgba(0,0,0,.18);
+
+}
+
+#quote{
+
+margin:auto;
+
+margin-top:35px;
+
+width:900px;
+
+max-width:80vw;
+
+font-family:"Press Start 2P",monospace;
+
+font-size:14px;
+
+line-height:34px;
+
+color:white;
+
+text-shadow:2px 2px rgba(0,0,0,.3);
+
+}
+/*==========================
+        ENTER
+==========================*/
+
+#enter{
+
+margin-top:55px;
+
+font-family:"Press Start 2P", monospace;
+
+font-size:18px;
+
+padding:18px 45px;
+
+border:none;
+
+cursor:pointer;
+
+background:#ffe066;
+
+color:#4c1d95;
+
+border-radius:18px;
+
+box-shadow:
+
+0 6px 0 #d4aa00,
+
+0 12px 25px rgba(0,0,0,.25);
+
+transition:.25s;
+
+}
+
+#enter:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+
+0 9px 0 #d4aa00,
+
+0 18px 30px rgba(0,0,0,.35);
+
+}
+
+#enter:active{
+
+transform:translateY(4px);
+
+box-shadow:
+
+0 2px 0 #d4aa00;
+
+}
+/*==========================
+        POWER ON
+==========================*/
+
+@keyframes powerOn{
+
+0%{
+
+opacity:0;
+transform:scaleY(.01) scaleX(.3);
+filter:brightness(6) blur(8px);
+
+}
+
+18%{
+
+opacity:1;
+transform:scaleY(.02) scaleX(1);
+filter:brightness(4) blur(5px);
+
+}
+
+35%{
+
+transform:scaleY(1.15);
+filter:brightness(2);
+
+}
+
+100%{
+
+opacity:1;
+transform:scaleY(1);
+filter:brightness(1);
+
+}
+
+}
+
+.powerOn{
+
+animation:powerOn .9s cubic-bezier(.2,.9,.2,1);
+
+}
+/*==========================
+      TV GLITCH
+==========================*/
+
+@keyframes tvGlitch{
+
+0%{
+
+transform:translate(0);
+
+}
+
+10%{
+
+transform:translate(-8px,2px);
+
+}
+
+15%{
+
+transform:translate(8px,-2px);
+
+}
+
+20%{
+
+transform:translate(-4px,1px);
+
+}
+
+25%{
+
+transform:translate(0);
+
+}
+
+100%{
+
+transform:translate(0);
+
+}
+
+}
+
+.tvGlitch{
+
+animation:tvGlitch .45s;
+
+}
+#logo::after{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+top:50%;
+
+transform:translate(-50%,-50%);
+
+width:120%;
+
+height:120%;
+
+background:radial-gradient(
+
+circle,
+
+rgba(255,255,255,.18),
+
+transparent 70%
+
+);
+
+filter:blur(30px);
+
+z-index:-1;
+
+}
