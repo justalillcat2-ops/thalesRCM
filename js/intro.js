@@ -44,25 +44,36 @@ window.onload = () => {
 // THALES
 // =========================
 
-function showLogo(){
+logo.style.display = "block";
 
-    logo.style.display="block";
-    logo.classList.add("glitch");
-    logo.setAttribute("data-text","THALES");
+logo.setAttribute("data-text","THALES");
 
+logo.animate(
 
-    glitchLogo();
+[
+{
+opacity:0,
+transform:"translateY(80px) scale(.8)"
+},
 
-    setTimeout(()=>{
+{
+opacity:1,
+transform:"translateY(0px) scale(1)"
+}
 
-        logo.style.display="none";
+],
 
-        startBoot();
+{
 
-    },3000);
+duration:900,
+
+fill:"forwards",
+
+easing:"cubic-bezier(.17,.84,.44,1)"
 
 }
 
+);
 // =========================
 // GLITCH
 // =========================
