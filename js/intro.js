@@ -275,3 +275,12 @@ logo.classList.add("powerOn");
 logo.classList.add("tvGlitch");
 
 logo.setAttribute("data-text","THALES");
+mainScreen.style.display = "block";
+
+setTimeout(()=>{
+
+mainScreen.style.opacity = "1";
+
+artist.setAttribute("data-text","THALESRCM");
+
+},100);
